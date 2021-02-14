@@ -8,7 +8,7 @@ def main():
     w_copy = [_ for _ in w_copy_str]
     word_str = "_" * len(w_copy_str)
     word = [_ for _ in word_str]
-    max_guess = 6
+    max_guess = len(w_copy_str) * 2
     guess_list = []
     print(word)
     while (guess_num < max_guess) and (word != w_copy):
@@ -36,8 +36,10 @@ def guess():
     guess_letter = input("Please input your guess character: ")
     if len(guess_letter) > 1:
         print("Please input 1 character only!")
+        guess()
     elif str.isdigit(guess_letter):
         print("Please only input letters not numbers!")
+        guess()
     return guess_letter
 
 
